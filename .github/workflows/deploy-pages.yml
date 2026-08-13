@@ -45,7 +45,7 @@ jobs:
         run: |
           set -euo pipefail
           for attempt in {1..18}; do
-            if page="$(curl -fsSL --max-time 15 "https://ops.hbkr.net/?build=$GITHUB_SHA")" && grep -Fq "HBKR OPS | Project Operations" <<< "$page"; then
+            if page="$(curl -fsSL --max-time 15 "https://ops.hbkr.net/?build=$GITHUB_SHA")" && grep -Fq "HBKR OPS | AI 프로젝트 운영" <<< "$page"; then
               exit 0
             fi
             sleep 10
